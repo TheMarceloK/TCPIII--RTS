@@ -16,13 +16,4 @@ MonoBehaviour:
   - bindings
   _fieldsToShowInGame:
   - bindings
-  bindings:
-  - displayName: Build a house
-    key: h
-    inputEvent: Build:house
-  - displayName: Build a tower
-    key: t
-    inputEvent: Build:tower
-  - displayName: Show the debug console
-    key: '`'
-    inputEvent: ShowDebugConsole
+  bindings: []

@@ -19,4 +19,5 @@ public class SkillButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         EventManager.TriggerEvent("UnhoveredSkillButton");
     }
+    
 }

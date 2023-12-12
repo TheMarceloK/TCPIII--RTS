@@ -133,23 +133,23 @@ public class Unit
                 globalParams.baseGoldProduction + bonusBuildingsCount * globalParams.bonusGoldProductionPerBuilding;
         }
 
-        if (_data.canProduce.Contains(InGameResource.Wood))
-        {
-            int treesScore =
-                Physics.OverlapSphere(pos, globalParams.woodProductionRange, Globals.TREE_MASK)
-                .Select((c) => globalParams.woodProductionFunc(Vector3.Distance(pos, c.transform.position)))
-                .Sum();
-            _production[InGameResource.Wood] = treesScore;
-        }
+        //if (_data.canProduce.Contains(InGameResource.Wood))
+        //{
+        //    int treesScore =
+        //        Physics.OverlapSphere(pos, globalParams.woodProductionRange, Globals.TREE_MASK)
+        //        .Select((c) => globalParams.woodProductionFunc(Vector3.Distance(pos, c.transform.position)))
+        //        .Sum();
+        //    _production[InGameResource.Wood] = treesScore;
+        //}
 
-        if (_data.canProduce.Contains(InGameResource.Stone))
-        {
-            int rocksScore =
-                Physics.OverlapSphere(pos, globalParams.woodProductionRange, Globals.ROCK_MASK)
-                .Select((c) => globalParams.stoneProductionFunc(Vector3.Distance(pos, c.transform.position)))
-                .Sum();
-            _production[InGameResource.Stone] = rocksScore;
-        }
+        //if (_data.canProduce.Contains(InGameResource.Stone))
+        //{
+        //    int rocksScore =
+        //        Physics.OverlapSphere(pos, globalParams.woodProductionRange, Globals.ROCK_MASK)
+        //        .Select((c) => globalParams.stoneProductionFunc(Vector3.Distance(pos, c.transform.position)))
+        //        .Sum();
+        //    _production[InGameResource.Stone] = rocksScore;
+        //}
 
         // prepare data for upgrade to next level
         _levelUpData = _GetLevelUpData();

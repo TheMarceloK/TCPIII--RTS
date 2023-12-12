@@ -30,14 +30,14 @@ public class CharacterManager : UnitManager
         agent.CalculatePath(targetPosition, path);
         if (path.status == NavMeshPathStatus.PathInvalid)
         {
-            if (playSound)
-                contextualSource.PlayOneShot(((CharacterData)Unit.Data).onMoveInvalidSound);
+            //if (playSound)
+            //    contextualSource.PlayOneShot(((CharacterData)Unit.Data).onMoveInvalidSound);
             return false;
         }
 
         agent.destination = targetPosition;
-        if (playSound)
-            contextualSource.PlayOneShot(((CharacterData)Unit.Data).onMoveValidSound);
+        //if (playSound)
+        //    contextualSource.PlayOneShot(((CharacterData)Unit.Data).onMoveValidSound);
         return true;
     }
 

@@ -40,7 +40,18 @@ public class Laucher : MonoBehaviourPunCallbacks
     private Dictionary<int, PlayerData> _playersData;
     bool entrou = false;
     Player[] players ;
-    public int facção =1;
+    public int facção;
+
+    [SerializeField]
+    private GameObject _rooomMenu;
+    [SerializeField]
+    private GameObject _opcoesTela;
+    [SerializeField]
+    private GameObject _creditosTela;
+    [SerializeField]
+    private GameObject _encontrarSalaTela;
+    [SerializeField]
+    private GameObject _menuentrada;
 
     private static readonly Color[] _playerColors = new Color[]
     {
@@ -67,6 +78,8 @@ public class Laucher : MonoBehaviourPunCallbacks
     {
         EventManager.TriggerEvent("LoadedScene");
         //PhotonNetwork.ConnectUsingSettings();
+        facção = Random.Range(0, 3);
+        Debug.Log(facção);
     }
 
     private void Update()
@@ -164,7 +177,8 @@ public class Laucher : MonoBehaviourPunCallbacks
     public void LeaveRoom()
     {
         PhotonNetwork.LeaveRoom();
-        MenuManager.Instance.OpenMenu("loading");
+        _rooomMenu.SetActive(false);
+        //MenuManager.Instance.OpenMenu("loading");
     }
 
     public void JoinRoom(RoomInfo info)
@@ -173,6 +187,36 @@ public class Laucher : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRoom(info.Name);
         MenuManager.Instance.OpenMenu("room");
         
+    }
+
+    public void AbrirOpcoes()
+    {
+        _opcoesTela.SetActive(true);
+        _menuentrada.SetActive(false);
+
+    }
+
+
+    public void FecharOpcoes()
+    {
+        _opcoesTela.SetActive(false);
+        _menuentrada.SetActive(true);
+
+    }
+
+    public void AbrirCreditos()
+    {
+        _creditosTela.SetActive(true);
+    }
+
+    public void FecharCreditos()
+    {
+        _creditosTela.SetActive(false);
+    }
+
+    public void FecharEncontrarSala()
+    {
+        _encontrarSalaTela.SetActive(false);
     }
 
     public override void OnLeftRoom()
@@ -212,5 +256,10 @@ public class Laucher : MonoBehaviourPunCallbacks
         players = PhotonNetwork.PlayerList;
         entrou = true;
         Instantiate(playerListPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(newPlayer);
+    }
+
+    public void FecharJogo()
+    {
+        Application.Quit();
     }
 }

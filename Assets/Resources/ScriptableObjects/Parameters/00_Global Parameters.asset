@@ -13,13 +13,11 @@ MonoBehaviour:
   m_Name: 00_Global Parameters
   m_EditorClassIdentifier: 
   _fieldsToSerialize:
-  - enableDayAndNightCycle
   - enableFOV
   _fieldsToShowInGame:
   - enableFOV
-  - enableDayAndNightCycle
-  enableDayAndNightCycle: 0
-  dayLengthInSeconds: 20
+  enableDayAndNightCycle: 1
+  dayLengthInSeconds: 120
   dayInitialRatio: 0.2
   initialBuildings:
   - {fileID: 11400000, guid: e96459f1bfa49274ea773ef735385977, type: 2}

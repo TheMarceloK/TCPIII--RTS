@@ -560,7 +560,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 51afe93aab9fa7446bb55dd51e8b1bce,
         type: 3}
       propertyPath: m_Name
-      value: sup_danaba 1
+      value: Mesh
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51afe93aab9fa7446bb55dd51e8b1bce, type: 3}

@@ -5,8 +5,8 @@ using UnityEngine.AI;
 public enum InGameResource
 {
     Gold,
-    Wood,
-    Stone
+    //Wood,
+    //Stone
 }
 
 public enum UnitFormationType
@@ -31,15 +31,15 @@ public static class Globals
     public static InGameResource[] GAME_RESOURCE_KEYS = new InGameResource[]
         {
             InGameResource.Gold,
-            InGameResource.Wood,
-            InGameResource.Stone,
+            //InGameResource.Wood,
+            //InGameResource.Stone,
         };
 
     public static Dictionary<InGameResource, int> XP_CONVERSION_TO_RESOURCE = new Dictionary<InGameResource, int>()
     {
         { InGameResource.Gold, 100 },
-        { InGameResource.Wood, 80 },
-        { InGameResource.Stone, 40 }
+        //{ InGameResource.Wood, 80 },
+        //{ InGameResource.Stone, 40 }
     };
 
     public static BuildingData[] BUILDING_DATA;
@@ -62,9 +62,9 @@ public static class Globals
         for (int i = 0; i < nPlayers; i++)
             GAME_RESOURCES[i] = new Dictionary<InGameResource, GameResource>()
                 {
-                    { InGameResource.Gold, new GameResource("Gold", 1000) },
-                    { InGameResource.Wood, new GameResource("Wood", 1000) },
-                    { InGameResource.Stone, new GameResource("Stone", 1000) }
+                    { InGameResource.Gold, new GameResource("Gold", 999999999) },
+                    //{ InGameResource.Wood, new GameResource("Wood", 1000) },
+                    //{ InGameResource.Stone, new GameResource("Stone", 1000) }
                 };
     }
 
